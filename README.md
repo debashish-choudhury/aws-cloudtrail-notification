@@ -1,6 +1,3 @@
-# aws-cloudtrail-notification
-User will receive an email notification based on the CloudTrail logs and CloudWatch alarms.
-
 # AWS Cloudtrail Notification
 
 
@@ -31,7 +28,7 @@ A user in a management account can create an organization trail that logs all ev
 3. Download and install terraform ~1.4.6 or higher.
 4. Clone the repository and check out the master branch: `git clone https://github.com/debashish-choudhury/aws-cloudtrail-notification.git`
 5. Change directory the cloned repository: `cd aws-cloudtrail-notification`
-6. Set credentials using the `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and optionally `AWS_SESSION_TOKEN` environment variables. \
+6. Set credentials using the `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and optionally `AWS_SESSION_TOKEN` environment variables.
    ```
    % export AWS_ACCESS_KEY_ID="anaccesskey"
    % export AWS_SECRET_ACCESS_KEY="asecretkey"
@@ -49,7 +46,7 @@ A user in a management account can create an organization trail that logs all ev
      }
    }
    ```
-8. Run terraform plan: \
+8. Run terraform plan: 
    ```bash
    terraform plan -out output.tfplan
    ```

@@ -45,7 +45,7 @@ locals {
       pattern                    = "{($.eventName=CreateRole)||($.eventName=DeleteRole)}",
       metric_transformation_name = "IAMRoleCreationOrDeletionEvent"
     }
-    
+
   }
 }
 

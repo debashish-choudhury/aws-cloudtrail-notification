@@ -56,9 +56,9 @@ resource "aws_cloudwatch_log_group" "cloudtrail_event_logs" {
 }
 
 resource "aws_cloudtrail" "event_logs" {
-  depends_on = [ aws_s3_bucket_policy.cloudtrail_access_s3 ]
-  name           = var.trail_name
-  s3_bucket_name = aws_s3_bucket.cloudtrail_event_logs.id
+  depends_on                    = [aws_s3_bucket_policy.cloudtrail_access_s3]
+  name                          = var.trail_name
+  s3_bucket_name                = aws_s3_bucket.cloudtrail_event_logs.id
   s3_key_prefix                 = ""
   include_global_service_events = true # Default is true
   is_multi_region_trail         = true # Default is false
@@ -82,9 +82,9 @@ data "aws_caller_identity" "current" {}
 
 # Attach S3 bucket policy
 resource "aws_s3_bucket_policy" "cloudtrail_access_s3" {
-  bucket = aws_s3_bucket.cloudtrail_event_logs.id
-  depends_on = [ aws_s3_bucket.cloudtrail_event_logs ]
-  policy = <<POLICY
+  bucket     = aws_s3_bucket.cloudtrail_event_logs.id
+  depends_on = [aws_s3_bucket.cloudtrail_event_logs]
+  policy     = <<POLICY
 {
   "Version": "2012-10-17",
   "Statement": [
